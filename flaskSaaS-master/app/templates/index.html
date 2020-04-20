@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+
+<br>
+<form action="/user/charge" method="post">
+ <article>
+   <label>
+   </label>
+ </article>
+ 
+ <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+ 
+         data-key="pk_test_TQmy1LFbeJ6tgZLOdzT4pZRh00mJ3yq97c"
+         data-description="One Time X Ray charge"
+         data-amount="1000"
+   data-email="{{ email }}"
+         data-locale="auto"></script>
+ </form><br><br>
+
+
+{% endif %}
+    
+<section id="hero">	
+   	  
+  <div class="row hero-content">
+
+    <div class="twelve columns hero-container">
+
+       <!-- hero-slider start-->
+       <div id="hero-slider" class="flexslider">
+
+         <ul class="slides">
+
+           <!-- slide -->
+           <li>
+             <div class="flex-caption">
+              <h1 class=""><span>MediSync</span></h1>	
+                
+              <h3 class="">MediSync is a state-of-the-art platform that uses deep learning to automatically find and classify a broad spectrum of diseases and abnormal signs in chest radiographs.</h3>				   
+            </div>						
+           </li>
+
+           <!-- slide -->
+           <li>						
+            <div class="flex-caption">
+              <h1 class=""></h1>
+
+              <h3 class="">The most widespread method interpretation of medical data such as radiology reports are done manually by medical experts. This is however quite limited due to its subjectivity, complexity of the image, extensive variations that exist across different interpreters, bias and fatigue.</h3>			   
+            </div>					
+           </li>
+
+           <!-- slide -->
+           <li>
+             <div class="flex-caption">
+              <h1 class=""></h1>
+
+              <h3 class=""> We are in the middle of a revolution of Artificial Intelligence  that is rapidly changing the field of medical image analysis. This platform combines the best of AI and X-ray image processing to help medical professionals in the diagnosis of ther patients' chest X-rays.</h3>			   
+            </div>
+           </li>					              
+
+         </ul>
+
+       </div> <!-- end hero-slider -->				   
+
+      </div> <!-- end twelve columns-->
+
+  </div> <!-- end row -->	
+
+  <div id="more">
+        <a class="smoothscroll" href="#services">More About Us<i class="fa fa-angle-down"></i></a>
+  </div> 	
+
+ </section> <!-- end homepage hero -->
+ <br>
+
+  
+
+ <!-- portfolio
+ ================================================== -->
+ <section id="portfolio">
+
+    <div class="row section-head">
+
+      <div class="twelve columns">
+
+        <h1>Our Project<span>.</span></h1>
+
+         <hr />               
+
+         <p>A ResNet based deep learning model is fine tuned on a dataset consisting of 5863 samples of Chest X-rays is used to extract relevant features required to perform classification  
+          <br>T-SNE is used to determine the clusters using unsupervised machine learning techniques. Finally a softmax layer is used to classify these features. The output of this neural network will indicate whether the patient has a disease or not.
+          <br>Using the Flask framework in Python, we create a REST API that takes an X-ray image as input and returns the results from our model in JSON format. This API can now be called in our web application to analyze the uploaded images.
+          </p>
+
+      </div>
+
+  </div> <!-- end section-head -->
+  
+ </section> <!-- end portfolio -->
+
+
+ <!-- Services Section
+ ================================================== -->
+ <section id="services">
+
+   <div class="row section-head">
+
+      <div class="twelve columns">
+
+        <h1>Our Team<span>.</span></h1>
+
+         <hr />      	         
+
+     <table style="width: 100%;color: white;">
+      <thead>
+        <tr>
+        <th>Name</th>
+        <th>USN</th>
+        <th>E-mail address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td align="center">Dhruv Behl</td>
+        <td align="center">1RV17CS048</td>
+        <td align="center">dhruvbehl.cs17@rvce.edu.in</td>
+        </tr>
+        <tr>
+        <td align="center">K. Anirudh</td>
+        <td align="center">1RV17CS066</td>
+        <td align="center">kanirudh.cs17@rvce.edu.in</td>
+        </tr>
+        <tr>
+        <td align="center">Nishchal Shetty</td>
+        <td align="center">1RV17CS097</td>
+        <td align="center">nishchalshetty.cs17@rvce.edu.in</td>
+        </tr>
+      </tbody>
+      </table>
+
+      </div>
+
+    </div> <!-- end section-head -->
+ 
+ </section> <!-- end services -->
+
+
+
+ <!-- Footer
+ ================================================== -->
+ <footer>
+<div id="go-top">
+  <a class="smoothscroll" title="Back to Top" href="#hero">Back to Top<i class="fa fa-angle-up"></i></a>
+ </div>
+ </footer> <!-- end footer -->
+
+ <div id="preloader"> 
+    <div id="loader"></div>
+ </div> 
+
+ <!-- Java Script
+ ================================================== --> 
+ 
+
+{% endblock %}
